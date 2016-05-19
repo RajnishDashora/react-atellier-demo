@@ -6,8 +6,14 @@ import Card from './card/card.js'
 
 class AppComponent extends React.Component {
   render() {
-    return (
-      <Card />
+  	const action = {
+  		name: 'log',
+  		handler: () => {
+  			console.log('Hello world!');
+  		}
+  	};
+  	return (
+      <Card action={action} heading='Log Event'/>
     );
   }
 }
