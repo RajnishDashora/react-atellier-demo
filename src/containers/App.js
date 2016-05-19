@@ -11,11 +11,19 @@ import React, {
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Main from '../components/Main';
+import About from '../components/about/about';
+import Atellier from '../components/atellier/atellier';
+import { Router, Route, hashHistory } from 'react-router';
+
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
   render() {
-    const {actions} = this.props;
-    return <Main actions={actions}/>;
+    return (
+    	<Router history={hashHistory}>
+    		<Route path="/about" component={ About }></Route>
+    		<Route path="/atellier" component={ Atellier }></Route>
+    	</Router>
+    );
   }
 }
 /* Populated by react-webpack-redux:reducer
