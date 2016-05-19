@@ -15,13 +15,19 @@ import About from '../components/about/about';
 import Atellier from '../components/atellier/atellier';
 import { Router, Route, hashHistory } from 'react-router';
 
+const main = (actions) => {
+  return <Main actions={actions}/>;
+};
+
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
   render() {
+    const {actions} = this.props;
     return (
     	<Router history={hashHistory}>
     		<Route path="/about" component={ About }></Route>
     		<Route path="/atellier" component={ Atellier }></Route>
+        <Route path="/" component={main}></Route>
     	</Router>
     );
   }
